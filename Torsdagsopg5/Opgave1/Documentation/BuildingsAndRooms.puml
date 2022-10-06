@@ -1,0 +1,46 @@
+@startuml
+class Main
+class Building
+class Room
+
+object building
+object room
+
+Main--*Building
+Main : +static ArrayList<Room>rooms
+Main : +static int countLamps(Building building)
+Main : +static boolean isRoomToFloorRatioGood(Building building)
+
+Building--*building
+building : -parameter int numberOfBathrooms
+building : -parameter int numberOfFlorrs
+building : -parameter boolean isOfficeBuilding
+building : -parameter ArrayList<Room>BuildingRooms
+
+
+Building--*Room
+
+Building : -numberOfBathrooms
+Building : -numberOfFloors
+Building : -isOfficeBuilding
+
+Building : +int getNumberOfBathrooms()
+Building : +boolean isOfficeBuilding()
+Building : +ArrayList<Room> getBuildingRooms()
+Building : +int getNumberFloors()
+
+Room--*room
+room : -parameter int numberOfDoors
+room : -parameter int numberOfLamps
+room : -parameter int numberOfWindows
+
+
+Room : -int numberOfDoors
+Room : -int numberOfLamps
+Room : -int numberOfWindows
+
+Room : +int getNumberOfDoors()
+Room : +int getNumberOfLamps()
+Room : +int getNumberOfWindows()
+
+@enduml
